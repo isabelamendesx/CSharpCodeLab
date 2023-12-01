@@ -1,1 +1,1 @@
-# AdaTech
+# Hangman Game in C#
