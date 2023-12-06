@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdaTech.LibrarySystem
 {
-    public class BookLibrary
+    public static class BookLibrary
     {
-        public List<Dictionary<string, string>> ListOfBooks = new List<Dictionary<string, string>>()
+        public static List<Dictionary<string, string>> ListOfBooks = new List<Dictionary<string, string>>()
         {
             // Romance
                     new Dictionary<string, string>
@@ -156,19 +156,25 @@ namespace AdaTech.LibrarySystem
                     }
          };
 
-        public List<Dictionary<string, string>> getTotalBookList()
+
+        public static List<Dictionary<string, string>> getTotalBookList()
         {
             return ListOfBooks;
         }
 
-        public List<Dictionary<string, string>> FindBooksByStatus(string status)
+        public static List<Dictionary<string, string>> FindBooksByStatus(string status)
         {
             return ListOfBooks.FindAll(book => book.ContainsKey("status") && book["status"] == status);
         }
 
-        public bool RentBook(string id)
+        public static Dictionary<string, string> FindBooksByID(string id)
         {
-            Dictionary<string, string> bookToRent = ListOfBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
+            return ListOfBooks.Find(book => book["id"] == id);
+        }
+
+        public static bool RentBook(string id, List<Dictionary<string, string>> avaiableBooks)
+        {
+            Dictionary<string, string> bookToRent = avaiableBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
 
             if (bookToRent != null && bookToRent["status"] == "AVAILABLE")
             {
@@ -176,11 +182,12 @@ namespace AdaTech.LibrarySystem
                 return true;
             }
             return false;
+
         }
 
-        public bool returnBook(string id)
+        public static bool ReturnBook(string id, List<Dictionary<string, string>> avaiableBooks)
         {
-            Dictionary<string, string> bookToReturn = ListOfBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
+            Dictionary<string, string> bookToReturn = avaiableBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
 
             if (bookToReturn != null && bookToReturn["status"] == "RENTED")
             {
@@ -190,6 +197,48 @@ namespace AdaTech.LibrarySystem
             return false;
         }
 
+        public static List<Dictionary<string, string>> searchByTitle(string title)
+        {
+            var result = ListOfBooks
+                .Where(book => book["title"].ToLower().Contains(title.ToLower()))
+                .ToList();
+
+            if (result.Any())
+            {
+                return result;
+            }
+
+            return null;
+            
+        }
+        
+
+        public static List<Dictionary<string, string>> searchByAuthor(string author)
+        {
+            var result = ListOfBooks
+                .Where(book => book["author"].ToLower().Contains(author.ToLower()))
+                .ToList();
+
+            if (result.Any())
+            {
+                return result;
+            }
+                return null;
+        }
+
+
+        public static List<Dictionary<string, string>> searchByGenre(string genre)
+        {
+            var result = ListOfBooks
+                .Where(book => book.ContainsKey("genre") && book["genre"] == genre)
+                .ToList();
+
+            if (result.Any())
+            {
+                return result;
+            }
+            return null;
+        }
 
     }
 
