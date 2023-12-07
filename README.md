@@ -21,6 +21,41 @@ No módulo de lógica de programação, pude revisitar conceitos básicos (poré
 Um singelo ConsoleApp que proporciona uma experiência divertida do clássico Jogo da Forca.
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-  <img src="docs/hangman1.png" alt="Logo Java" height="300" style="margin-right: 100px;">
-  <img src="docs/hangman2.png" alt="Logo javafx" height="300" style="margin-right: 100px;">
+  <img src="docs/hangman1.png" alt="Logo Java" height="235" style="margin-right: 100px;">
+  <img src="docs/hangman2.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
 </div>
+
+#### Funcionalidades
+ `Menu Interativo:` Escolha uma categoria no menu para começar o jogo. As opções incluem Tecnologia/Computadores, Países, Animais e Times de Futebol.
+
+`Diversidade de Palavras:` Cada categoria possui uma lista exclusiva de palavras para adivinhar, garantindo uma experiência variada a cada partida.
+
+`Gráficos da Forca:` A interface exibe uma representação gráfica da forca conforme o jogador comete erros, tornando o jogo visualmente envolvente.
+
+`Dicas e Palavra Oculta:` Receba dicas sobre a palavra a ser adivinhada e veja as letras adivinhadas até o momento.
+
+`Replay:` Após o final do jogo, escolha jogar novamente ou encerrar o programa.
+
+### Library System
+
+Um singelo ConsoleApp que simula o sistema de uma biblioteca, é possível alugar e devolver livros. A biblioteca contém uma lista de livros de diferentes gêneros, como Romance, Ficção Científica, Mistério, Fantasia e Não Ficção.
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <img src="docs/Library1.png" alt="Logo Java" height="235" style="margin-right: 100px;">
+  <img src="docs/Library2.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
+   <img src="docs/Library3.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
+</div>
+
+#### Funcionalidades
+`Menu Interativo:` Ao iniciar o programa, você é recebido com um menu interativo que oferece opções para alugar ou devolver um livro.
+
+`Aluguel de Livros:` Escolha entre alugar um livro específico por autor, gênero, título ou explore a lista completa de livros disponíveis.
+
+`Devolução de Livros:` Veja a lista de livros atualmente alugados e selecione o livro que deseja devolver.
+
+`Pesquisa de Livros:` Realize pesquisas por autor, gênero ou título para encontrar livros que atendam aos seus interesses.
+
+`Visualização da Lista Completa:` Explore a lista completa de livros disponíveis para aluguel.
+
+
+
