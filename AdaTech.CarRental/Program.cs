@@ -6,39 +6,69 @@
         {
             do
             {
-                Console.cl
+                Client client;
+                Employee employee;
+
+                
+                Console.Clear();
                 UserInterface.showTitle();
                 UserInterface.showLoginMenu();
                 int option = Utilities.LerNumeroInt("Type your chose", 0, 4);
-                UserInterface.showLoginOption(option)
-                
-                
+                UserInterface.showLoginOption(option);
+
+                switch (option) {
+                    case 1:
+                        client = ClientLogin();
+                        UserInterface.ShowClientMenu();
+                        break;
+                    case 2:
+                        employee = EmployeeLogin();
+                        break;
+                    default:
+                        break;
+                 }
 
 
-            } while (true);
+
+
+
+
+                Console.WriteLine("Press 'y' continue or any other key to quit");
+            } while (Console.ReadLine().ToLower() == "y");
         }
 
-        public static void handleLoginMenu(int option)
+
+        public static Client ClientLogin()
         {
-            switch (option)
+            string username = Utilities.LerPrimeiraPalavra("USERNAME");
+            string password = Utilities.LerPrimeiraPalavra("PASSWORD");
+
+            if (UserRepository.VerifyClientLogin(username, password) != null)
             {
-                case 1:
-                    ClientLogin(); 
-                    break;
-
-
+                return (Client)UserRepository.VerifyClientLogin(username, password);
             }
+
+            return null;
         }
 
-        public static void ClientLogin()
+        
+
+        public static Employee EmployeeLogin()
         {
-            Console.Write("USERNAME: ");
-            string username = Console.Read();
-            Console.Write("PASSWORD: ");
-            string password = Console.Read();
-            UserRepository.VerifyLogin(username, password);
+            string username = Utilities.LerPrimeiraPalavra("USERNAME");
+            string password = Utilities.LerPrimeiraPalavra("PASSWORD");
+
+            if (UserRepository.VerifyEmployeeLogin(username, password) != null)
+            {
+                return (Employee)UserRepository.VerifyEmployeeLogin(username, password);
+            }
+
+            return null;
         }
+
+        
 
 
     }
 }
+

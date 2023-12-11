@@ -27,7 +27,30 @@ namespace AdaTech.CarRental
             return numero;
         }
 
-        public static DateTime LerData(string prompt, DateTime min)
+        public static string LerPrimeiraPalavra(string prompt)
+        {
+            string input;
+            bool palavraValida;
+
+            do
+            {
+                Console.Write($"{prompt} ");
+                input = Console.ReadLine();
+                palavraValida = !string.IsNullOrWhiteSpace(input);
+
+                if (!palavraValida)
+                {
+                    Console.WriteLine("You must enter a non-empty word. Please try again.");
+                }
+
+            } while (!palavraValida);
+
+            int index = input.IndexOf(' ');
+            return index == -1 ? input : input.Substring(0, index);
+        }
+    
+
+    public static DateTime LerData(string prompt, DateTime min)
         {
             DateTime data;
             bool dataValida = false;
@@ -36,8 +59,7 @@ namespace AdaTech.CarRental
             {
                 Console.Write($"{prompt}: ");
                 string dataInput = Console.ReadLine();
-
-                // Tenta converter a string para DateTime no formato especificado
+o
                 dataValida = DateTime.TryParseExact(dataInput, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out data);
 
                 if (!dataValida || data < min)
@@ -60,7 +82,6 @@ namespace AdaTech.CarRental
                 Console.Write($"{prompt}: ");
                 string dataInput = Console.ReadLine();
 
-                // Tenta converter a string para DateTime no formato especificado
                 dataValida = DateTime.TryParseExact(dataInput, "dd/MM/yyyy", null, System.Globalization.DateTimeStyles.None, out data);
 
                 if (!dataValida && data != exactDate)

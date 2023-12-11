@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.CarRental
 {
-    internal class Reservation
+    public class Reservation
     {
         public Vehicle vehicle { get; set; }
         public Client client { get; set; }

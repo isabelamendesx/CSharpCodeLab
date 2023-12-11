@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.CarRental
 {
-    internal class Employee : User
+    public class Employee : User
     {
         public JobTitle jobTitle {  get; set; }
         List<Reservation> reservationList;
@@ -16,6 +16,18 @@ namespace AdaTech.CarRental
         {
            reservationList = new List<Reservation>();
             this.jobTitle = jobTitle;
+        }
+
+        public override bool VerifyLogin(string username, string password)
+        {
+            User user = UserRepository.getUsersList().Find(user => user is Employee && user.username == username && user.hashPassword == EncryptPassword(password));
+            if (user != null)
+            {
+                Console.WriteLine($"Logged in as Employee: {user.username}");
+                return true;
+            }
+            return false;
+
         }
 
         public bool DeliverCar(Client client)

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.CarRental
 {
-    internal class Client : User
+    public class Client : User
     {
         public string _driversLicense {  get; set; }
         public PaymentMethod _paymentMethod { get; set; }
@@ -130,9 +130,17 @@ namespace AdaTech.CarRental
             return false;
         }
 
+        public override bool VerifyLogin(string username, string password)
+        {
+            User user = UserRepository.getUsersList().Find(user => user is Client && user.username == username && user.hashPassword == EncryptPassword(password));
+            if (user != null)
+            {
+                    Console.WriteLine($"Logged in as Client: {user.username}");
+                    return true;
+            }
+            return false;
 
-
-
+        }
         
     }
 }

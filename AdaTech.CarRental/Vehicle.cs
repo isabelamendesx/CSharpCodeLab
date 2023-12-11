@@ -17,7 +17,7 @@ namespace AdaTech.CarRental
         public string Model { get; private set; }
         public double DailyRate { get; private set; }
 
-        // Construtor da classe
+
         public Vehicle(
             VehicleType vehicleType,
             VehicleStatus vehicleStatus,

@@ -20,28 +20,20 @@ namespace AdaTech.CarRental
             return usersList;
         }
 
-        public static void VerifyLogin(string username, string password)
+        
+
+        public static User VerifyClientLogin(string username, string password)
         {
-            User user = usersList.Find(user => user.username == username && user.hashPassword == EncryptPassword(password);
-            if (user != null)
-            {
-                if (user is Employee)
-                {
-                    // É um Employee
-                    Employee employee = user as Employee;
-                    // Faça algo com o objeto Employee se necessário
-                    Console.WriteLine($"Logged in as Employee: {employee.username}");
-                }
-                else if (user is Client)
-                {
-                    // É um Client
-                    Client client = user as Client;
-                    // Faça algo com o objeto Client se necessário
-                    Console.WriteLine($"Logged in as Client: {client.username}");
-                }
-
-                return false;
-            }
-
+            return usersList.Find(user => user is Client && user.VerifyLogin(username, password));
         }
+
+        public static User VerifyEmployeeLogin(string username, string password)
+        {
+            return usersList.Find(user => user is Employee && user.VerifyLogin(username, password));
+        }
+
+
+    }
 }
+
+

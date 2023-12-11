@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.CarRental
 {
-    internal class Payment
+    public class Payment
     {
         public double totalValue {  get; set; }
         public PaymentMethod paymentMethod { get; set; }

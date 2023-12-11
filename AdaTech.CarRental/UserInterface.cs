@@ -42,7 +42,7 @@ namespace AdaTech.CarRental
                     break;
             }
         }
-        public static void ShowMenu()
+        public static void ShowClientMenu()
         {
             Console.WriteLine("Welcome to CAR RENTAL\n");
 

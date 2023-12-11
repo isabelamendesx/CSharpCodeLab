@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdaTech.CarRental
 {
-    internal enum JobTitle
+    public enum JobTitle
     {
         Manager = 1,
         Salesperson = 2
