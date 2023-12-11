@@ -18,13 +18,16 @@ namespace AdaTech.LibrarySystem
 
         public static void ShowLibraryMenu()
         {
-     
+
             Console.WriteLine("+===============================+");
             Console.WriteLine("|      * CHOOSE AN OPTION *     |");
             Console.WriteLine("|      1. Rent a book           |");
             Console.WriteLine("|      2. Return a book         |");
+<<<<<<< HEAD
             Console.WriteLine("|      3. Find a book           |");
             Console.WriteLine("|      4. Soccer teams          |");
+=======
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
             Console.WriteLine("+===============================|\n");
         }
 
@@ -41,10 +44,56 @@ namespace AdaTech.LibrarySystem
         }
 
         public static void ShowSerchOptionMessage(int menuChoose)
+<<<<<<< HEAD
+=======
+        {
+            switch (menuChoose)
+            {
+                case 0:
+                    break;
+                case 1:
+                    Console.WriteLine("You search SEARCH BY AUTHOR\n");
+                    break;
+                case 2:
+                    Console.WriteLine("You chose SEARCH BY GENRE\n");
+                    break;
+                case 3:
+                    Console.WriteLine("You chose SEARCH BY AUTHOR\n");
+                    break;
+                case 4:
+                    Console.WriteLine("You chose VIEW OUR COMPLETE LIST");
+                    break;
+                default:
+                    Console.WriteLine("Invalid option. Please choose again");
+                    break;
+            }
+
+        }
+
+        public static void showBookList(List<Dictionary<string, string>> listToShow)
+        {
+            foreach (var book in listToShow)
+            {
+                Console.WriteLine($"ID: {book["id"]}, Título: {book["title"]}, Autor: {book["author"]}" +
+                    $"\n STATUS: {book["status"]}");
+            }
+        }
+
+        public static void showBook(Dictionary<string, string> bookToShow)
+        {
+            Console.WriteLine($"ID: {bookToShow["id"]}, Título: {bookToShow["title"]}, Autor: {bookToShow["author"]}" +
+               $"\n STATUS: {bookToShow["status"]}");
+        }
+
+
+
+        public static void ShowMenuOptionMessage(int menuChoose)
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
         {
             switch (menuChoose)
             {
                 case 1:
+<<<<<<< HEAD
                     Console.WriteLine("You search SEARCH BY TITLE\n");
                     break;
                 case 2:
@@ -95,9 +144,15 @@ namespace AdaTech.LibrarySystem
                     break;
                 case 4:
                     Console.WriteLine("You chose SOCCER TEAMS");
+=======
+                    Console.WriteLine("You chose RENT A BOOK\n");
+                    break;
+                case 2:
+                    Console.WriteLine("You chose RETURN A BOOK\n");
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
                     break;
                 default:
-                    Console.WriteLine("Opção inválida. Escolha novamente.");
+                    Console.WriteLine("Invalid option. Choose again.");
                     break;
             }
 

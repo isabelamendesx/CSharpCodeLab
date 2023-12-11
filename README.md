@@ -1,62 +1,61 @@
 # C# Code Lab
-Repositório de estudos realizados em C# durante o curso Back End C# da Ada Tech
+
+Bem-vindo ao meu repositório C# Code Lab! 
+
+Este repositório contém os principais projetos realizados durante minha jornada do DiverseDEV, programa de estágio do Mercado Eletrônico. Aqui você encontrará uma lista de projetos que realizei cuidadosamente enquanto estudava o vasto objeto do C#. 
+
+Comecei este repositório em Novembro de 2023, no primeiro módulo do curso "C# Backend Developer" da Ada Tech, que contou com os módulos: Lógica de programação, Programação Orientada a Objetos, Técnicas de Programação, Programação Web e Testes Automatizados.
+
+Espero que esses projetos possam guiar você em uma jornada de aprendizado, crescimento e transformação assim como me guiaram. 
+
+## Tópicos disponíveis
+
+- [Lógica de Programação](#logica-de-programação)
 
 ## Lógica de Programação
 
-### Conceitos Iniciais
+No módulo de lógica de programação, pude revisitar conceitos básicos (porém nunca desnecessários) como variáveis, interação com o console, aritmética computacional, estruturas condicionas, estruturas de repetição e arrays.  
 
-`Tipagem Estática:`
+### HangMan Game
 
-C# é uma linguagem fortemente tipada, o que significa que o tipo de uma variável é verificado em tempo de compilação. Isso ajuda a detectar erros de tipo antes da execução do programa, proporcionando maior segurança e robustez ao código.
-Compilação:
+Um singelo ConsoleApp que proporciona uma experiência divertida do clássico Jogo da Forca.
 
-`Linguagem compilada:`
-Significa que o código-fonte é traduzido para código de máquina ou código intermediário (IL - Intermediate Language) durante o processo de compilação. O código intermediário é executado na Máquina Virtual do CLR (Common Language Runtime), que é parte do ambiente .NET.
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <img src="docs/hangman1.png" alt="Logo Java" height="235" style="margin-right: 100px;">
+  <img src="docs/hangman2.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
+</div>
 
-`Código Gerenciado:`
+#### Funcionalidades
+ `Menu Interativo:` Escolha uma categoria no menu para começar o jogo. As opções incluem Tecnologia/Computadores, Países, Animais e Times de Futebol.
 
-C# faz parte do ecossistema .NET, onde o código é executado no ambiente gerenciado pelo CLR. O CLR oferece recursos como coleta de lixo automática, tratamento de exceções e verificação de tipo em tempo de execução. Isso facilita o desenvolvimento e a manutenção de software, tornando-o mais seguro e menos suscetível a problemas de gerenciamento de memória.
+`Diversidade de Palavras:` Cada categoria possui uma lista exclusiva de palavras para adivinhar, garantindo uma experiência variada a cada partida.
 
-`C# vs .NET`
-O C# (c sharp) é uma linguagem de programação orientada a objetos criada pela Microsoft e tem como base as linguagens em C, o que traz uma similaridade entre as
-linguagem. Já o .NET (ou DotNet) é uma iniciativa da empresa Microsoft, que visa uma plataforma única para desenvolvimento e execução de sistemas e aplicações. Todo e qualquer código gerado para .NET pode ser executado em qualquer dispositivo que possua um framework de tal plataforma.
+`Gráficos da Forca:` A interface exibe uma representação gráfica da forca conforme o jogador comete erros, tornando o jogo visualmente envolvente.
 
-`Solution vs Project`
+`Dicas e Palavra Oculta:` Receba dicas sobre a palavra a ser adivinhada e veja as letras adivinhadas até o momento.
 
-No Visual Studio, uma "solution" (solução) é um contêiner que pode incluir vários "projects" (projetos). Vamos entender a diferença entre eles:
+`Replay:` Após o final do jogo, escolha jogar novamente ou encerrar o programa.
 
-*Project:*
-- Um projeto é uma unidade básica de trabalho no Visual Studio.
-- Contém todos os arquivos e configurações necessários para compilar e construir um produto de software.
+### Library System
 
-*Solution:*
-- Uma solução é um contêiner para um ou mais projetos.
-- Pode incluir projetos diferentes, como um projeto de aplicativo e uma biblioteca de suporte, fornecendo um escopo mais amplo
+Um singelo ConsoleApp que simula o sistema de uma biblioteca, é possível alugar e devolver livros. A biblioteca contém uma lista de livros de diferentes gêneros, como Romance, Ficção Científica, Mistério, Fantasia e Não Ficção.
 
-Em resumo, uma solução é usada para organizar e coordenar vários projetos relacionados, enquanto um projeto é a unidade individual de trabalho que contém os arquivos e configurações necessários para construir um componente específico do software.
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <img src="docs/Library1.png" alt="Logo Java" height="235" style="margin-right: 100px;">
+  <img src="docs/Library2.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
+   <img src="docs/Library3.png" alt="Logo javafx" height="235" style="margin-right: 100px;">
+</div>
 
-`Namespace e Using`
+#### Funcionalidades
+`Menu Interativo:` Ao iniciar o programa, você é recebido com um menu interativo que oferece opções para alugar ou devolver um livro.
 
-*Namespace:*
-Um namespace é um contêiner que organiza e fornece um escopo para um conjunto de tipos (classes, interfaces, delegados, etc.). Ele evita conflitos de nomes, permitindo que você use o mesmo nome para tipos diferentes, desde que estejam em namespaces diferentes. Por exemplo, a classe Console está no namespace System, e seu nome completo é System.Console. 
+`Aluguel de Livros:` Escolha entre alugar um livro específico por autor, gênero, título ou explore a lista completa de livros disponíveis.
 
-*Using:*
-Quando você escreve using nome-do-namespace;, está informando ao compilador que você planeja usar tipos desse namespace no código. Isso permite que você use apenas o nome do tipo, em vez do nome completo, tornando o código mais conciso.
-Por exemplo, o namespace System contém muitas classes fundamentais em C#, como Console, String, etc. Quando você usamos "using System" podemos escrever apenas Console, ao invés de System.Console.
+`Devolução de Livros:` Veja a lista de livros atualmente alugados e selecione o livro que deseja devolver.
 
+`Pesquisa de Livros:` Realize pesquisas por autor, gênero ou título para encontrar livros que atendam aos seus interesses.
 
-### Estrutura Básica de um programa em C#
+`Visualização da Lista Completa:` Explore a lista completa de livros disponíveis para aluguel.
 
-```csharp
-using System;
- 
-class Hello
-{
-    static void Main()
-    {
-        Console.WriteLine("Hello, World");
-    }
-}
-```
 
 

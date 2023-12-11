@@ -5,7 +5,9 @@ VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaTech.HangmanGame", "AdaTech.HangmanGame\AdaTech.HangmanGame.csproj", "{18E846D2-46FE-4CEC-A5DF-DA568616106B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaTech.LibrarySystem", "LibrarySystem\AdaTech.LibrarySystem.csproj", "{46E4CD43-7261-4F5C-8C8D-CBEF8641107A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdaTech.LibrarySystem", "LibrarySystem\AdaTech.LibrarySystem.csproj", "{46E4CD43-7261-4F5C-8C8D-CBEF8641107A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaTech.CarRental", "AdaTech.CarRental\AdaTech.CarRental.csproj", "{9BED405A-0D6F-4D5C-8CC5-FE8A91F2C5F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{46E4CD43-7261-4F5C-8C8D-CBEF8641107A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46E4CD43-7261-4F5C-8C8D-CBEF8641107A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46E4CD43-7261-4F5C-8C8D-CBEF8641107A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BED405A-0D6F-4D5C-8CC5-FE8A91F2C5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BED405A-0D6F-4D5C-8CC5-FE8A91F2C5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BED405A-0D6F-4D5C-8CC5-FE8A91F2C5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BED405A-0D6F-4D5C-8CC5-FE8A91F2C5F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

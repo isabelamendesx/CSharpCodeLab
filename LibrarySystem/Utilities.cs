@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace AdaTech.LibrarySystem
 {
+<<<<<<< HEAD
     internal static class Utilities
+=======
+    internal class Utilities
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
     {
         public static int LerNumeroInt(string prompt, int min, int max)
         {

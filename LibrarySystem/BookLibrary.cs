@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AdaTech.LibrarySystem
 {
-    public class BookLibrary
+    public static class BookLibrary
     {
-        public List<Dictionary<string, string>> ListOfBooks = new List<Dictionary<string, string>>()
+        public static List<Dictionary<string, string>> ListOfBooks = new List<Dictionary<string, string>>()
         {
             // Romance
                     new Dictionary<string, string>
@@ -156,22 +156,32 @@ namespace AdaTech.LibrarySystem
                     }
          };
 
-        public List<Dictionary<string, string>> getTotalBookList()
+
+        public static List<Dictionary<string, string>> getTotalBookList()
         {
             return ListOfBooks;
         }
 
-        public List<Dictionary<string, string>> FindBooksByStatus(string status)
+        public static List<Dictionary<string, string>> FindBooksByStatus(string status)
         {
             return ListOfBooks.FindAll(book => book.ContainsKey("status") && book["status"] == status);
         }
 
+<<<<<<< HEAD
         public Dictionary<string, string> FindBooksByID(string id)
         {
             return ListOfBooks.Find(book => book["status"] == "RENTED" && book["id"] == id);
         }
 
         public bool RentBook(string id, List<Dictionary<string, string>> avaiableBooks)
+=======
+        public static Dictionary<string, string> FindBooksByID(string id)
+        {
+            return ListOfBooks.Find(book => book["id"] == id);
+        }
+
+        public static bool RentBook(string id, List<Dictionary<string, string>> avaiableBooks)
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
         {
             Dictionary<string, string> bookToRent = avaiableBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
 
@@ -184,9 +194,9 @@ namespace AdaTech.LibrarySystem
 
         }
 
-        public bool returnBook(string id)
+        public static bool ReturnBook(string id, List<Dictionary<string, string>> avaiableBooks)
         {
-            Dictionary<string, string> bookToReturn = ListOfBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
+            Dictionary<string, string> bookToReturn = avaiableBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
 
             if (bookToReturn != null && bookToReturn["status"] == "RENTED")
             {
@@ -196,16 +206,34 @@ namespace AdaTech.LibrarySystem
             return false;
         }
 
+<<<<<<< HEAD
         public List<Dictionary<string, string>> searchByTitle(string title)
+=======
+        public static List<Dictionary<string, string>> searchByTitle(string title)
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
         {
             var result = ListOfBooks
                 .Where(book => book["title"].ToLower().Contains(title.ToLower()))
                 .ToList();
 
+<<<<<<< HEAD
             return result;
         }
 
         public List<Dictionary<string, string>> searchByAuthor(string author)
+=======
+            if (result.Any())
+            {
+                return result;
+            }
+
+            return null;
+            
+        }
+        
+
+        public static List<Dictionary<string, string>> searchByAuthor(string author)
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
         {
             var result = ListOfBooks
                 .Where(book => book["author"].ToLower().Contains(author.ToLower()))
@@ -215,6 +243,7 @@ namespace AdaTech.LibrarySystem
             {
                 return result;
             }
+<<<<<<< HEAD
             else
             {
                 var noResultsBook = new Dictionary<string, string>
@@ -233,16 +262,32 @@ namespace AdaTech.LibrarySystem
 
 
         public List<Dictionary<string, string>> searhchByGenre(string genre)
+=======
+                return null;
+        }
+
+
+        public static List<Dictionary<string, string>> searchByGenre(string genre)
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
         {
             var result = ListOfBooks
                 .Where(book => book.ContainsKey("genre") && book["genre"] == genre)
                 .ToList();
 
+<<<<<<< HEAD
             return result;
         }
 
 
 
+=======
+            if (result.Any())
+            {
+                return result;
+            }
+            return null;
+        }
+>>>>>>> 528215f782b2cde631b02ea4009dd90422dbcf7e
 
     }
 
