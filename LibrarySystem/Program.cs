@@ -6,8 +6,10 @@ namespace LibrarySystem
     {
         static void Main(string[] args)
         {
-            UserInterface.ShowLibraryWelcome();
-            UserInterface.ShowLibraryMenu();
+           BookLibrary bookLibrary = new BookLibrary();    
+           LibraryController controller = new LibraryController();  
+           controller.HandleSession(bookLibrary);
+       
          
         }
     }

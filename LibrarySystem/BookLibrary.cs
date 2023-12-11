@@ -166,9 +166,14 @@ namespace AdaTech.LibrarySystem
             return ListOfBooks.FindAll(book => book.ContainsKey("status") && book["status"] == status);
         }
 
-        public bool RentBook(string id)
+        public Dictionary<string, string> FindBooksByID(string id)
         {
-            Dictionary<string, string> bookToRent = ListOfBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
+            return ListOfBooks.Find(book => book["status"] == "RENTED" && book["id"] == id);
+        }
+
+        public bool RentBook(string id, List<Dictionary<string, string>> avaiableBooks)
+        {
+            Dictionary<string, string> bookToRent = avaiableBooks.Find(book => book.ContainsKey("id") && book["id"] == id);
 
             if (bookToRent != null && bookToRent["status"] == "AVAILABLE")
             {
@@ -176,6 +181,7 @@ namespace AdaTech.LibrarySystem
                 return true;
             }
             return false;
+
         }
 
         public bool returnBook(string id)
@@ -189,6 +195,53 @@ namespace AdaTech.LibrarySystem
             }
             return false;
         }
+
+        public List<Dictionary<string, string>> searchByTitle(string title)
+        {
+            var result = ListOfBooks
+                .Where(book => book["title"].ToLower().Contains(title.ToLower()))
+                .ToList();
+
+            return result;
+        }
+
+        public List<Dictionary<string, string>> searchByAuthor(string author)
+        {
+            var result = ListOfBooks
+                .Where(book => book["author"].ToLower().Contains(author.ToLower()))
+                .ToList();
+
+            if (result.Any())
+            {
+                return result;
+            }
+            else
+            {
+                var noResultsBook = new Dictionary<string, string>
+            {
+                {"id", "N/A"},
+                {"title", "No books found"},
+                {"author", ""},
+                {"publicationYear", ""},
+                {"genre", ""},
+                {"status", "N/A"}
+            };
+
+                return new List<Dictionary<string, string>> { noResultsBook };
+            }
+        }
+
+
+        public List<Dictionary<string, string>> searhchByGenre(string genre)
+        {
+            var result = ListOfBooks
+                .Where(book => book.ContainsKey("genre") && book["genre"] == genre)
+                .ToList();
+
+            return result;
+        }
+
+
 
 
     }
